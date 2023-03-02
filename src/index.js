@@ -2,6 +2,7 @@ import {React,useState,useRef} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import sound from './bloop.mp3';
+import win from './win.mp3';
 
 
 //Square comp for board - body/Board/Square
@@ -25,11 +26,9 @@ const Square = (props) => {
 
 //Board Of App - body/Board
 const Board = () => {
-  const audioRef = useRef(null);
   const initialSquares =Array(9).fill(null)
   const [squares,setSquares] = useState(initialSquares);
   const [xIsNext,setxIsNext] = useState(true);  
-
 
   const handleClickEvent = (i) => {
     const newSquares = [...squares];      //1. Make a copy of square state array
@@ -61,6 +60,12 @@ const Board = () => {
   const status = winner ?
   `Winner: ${winner}` :
   `Next Player:  ${+ xIsNext ? 'X' : 'O'}`;
+
+  if(winner){
+    const audio = new Audio();
+    audio.src = win;
+    audio.play();
+  }
 
   return  (
     <div className='status glow'>
