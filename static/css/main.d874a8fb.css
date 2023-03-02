@@ -1,0 +1,2 @@
+body{background-color:#444;color:#fff;font:32px Century Gothic;margin:20px}.Board{background-color:skyblue;margin:10px;padding:20px}.Game{align-items:center;display:flex;flex-direction:column}.boardRow{display:flex;flex-flow:row nowrap}.Square{background-color:#444;border:1px solid #999;color:#fff;font-size:84px;height:100px;padding:0;text-align:center;width:100px}.Square:focus{background-color:#222;outline:none}.status{font-size:24px;margin:20px}
+/*# sourceMappingURL=main.d874a8fb.css.map*/
