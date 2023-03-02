@@ -50,7 +50,7 @@ const Board = () => {
   `Next Player:  ${+ xIsNext ? 'X' : 'O'}`;
 
   return  (
-    <div className='status'>
+    <div className='status glow'>
      <div>
          {status}
      </div>
@@ -63,7 +63,7 @@ const Board = () => {
       <div className='boardRow'>
           {renderSquare(6)}{renderSquare(7)}{renderSquare(8)}
       </div>
-      <button onClick={() => setSquares(initialSquares)}>Restart</button>
+      <button onClick={() => setSquares(initialSquares)} className='game-button orange'>Restart</button>
     </div>
   )
 }
@@ -72,7 +72,7 @@ const Board = () => {
 const Game = () => {
   return (
     <div className='Game'>
-       Tic-Tac-Toe
+       Tic-Tac-Toe 
       <Board />
     </div>
   );
