@@ -72,7 +72,7 @@ const Board = () => {
 const Game = () => {
   return (
     <div className='Game'>
-       Tic-Tac-Toe 
+       Tic-Tac-Toe Test
       <Board />
     </div>
   );
