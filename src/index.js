@@ -1,20 +1,31 @@
-import React, {useState} from 'react';
+import {React,useState,useRef} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import sound from './bloop.mp3';
 
 
 //Square comp for board - body/Board/Square
 const Square = (props) => {
+  const audio = new Audio();
+  audio.src = sound;
+  function playSoundOnClick() {
+    audio.play();
+  }
   return (
-    <button className='Square' onClick={props.onClickEvent}>
-      {props.value}
+    <div >
+    <button className='Square' onClick={props.onClickEvent} >
+      {props.value}{playSoundOnClick()}
     </button>
+    </div>
+
+    
   )
 }
 
 
 //Board Of App - body/Board
 const Board = () => {
+  const audioRef = useRef(null);
   const initialSquares =Array(9).fill(null)
   const [squares,setSquares] = useState(initialSquares);
   const [xIsNext,setxIsNext] = useState(true);  
@@ -32,6 +43,8 @@ const Board = () => {
     newSquares[i] = xIsNext ? 'X' : 'O';                  //2. Update the copy, setting the i-th element to 'x'
     setSquares(newSquares);               //3. Call the set Squares function with the updated copy
     setxIsNext(!xIsNext);
+
+
   }
 
   //To Render and get Index of the Square
